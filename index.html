@@ -133,6 +133,7 @@
 
     <a
       class="join"
+      id="join-telegram"
       href="https://t.me/+ffzXCyQmIOo0YjA1"
       target="_blank"
       rel="noopener noreferrer"
@@ -142,5 +143,22 @@
 
     <p class="footer">VIRAJ ANALYST © 2026</p>
   </main>
+
+  <!-- Subscribe event: fires once per page load on button click -->
+  <script>
+    (function () {
+      var button = document.getElementById('join-telegram');
+      var subscribeSent = false;
+
+      button.addEventListener('click', function () {
+        if (subscribeSent) return;
+        subscribeSent = true;
+
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Subscribe');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
