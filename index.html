@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#080808">
   <title>VIRAJ ANALYST</title>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code: NEW PIXEL -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,12 +16,14 @@
   s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window,document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','1119425054348575');
-  fbq('track','PageView');
+
+  fbq('init', '1112240468179999');
+  fbq('track', 'PageView');
   </script>
+
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1119425054348575&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1112240468179999&ev=PageView&noscript=1"
     alt="">
   </noscript>
   <!-- End Meta Pixel Code -->
@@ -63,6 +65,7 @@
       font-size: 23px;
       font-weight: 800;
       letter-spacing: -1px;
+      box-shadow: 0 0 18px rgba(213,180,94,.12);
     }
 
     .eyebrow {
@@ -96,18 +99,22 @@
       padding: 17px 12px;
       border: 1px solid #d5b45e;
       border-radius: 5px;
-      background: #d5b45e;
+      background: linear-gradient(
+        135deg, #e8ce7c, #c29b43
+      );
       color: #090909;
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 1.4px;
       text-decoration: none;
-      transition: background .2s, color .2s;
+      transition: background .2s, color .2s, box-shadow .2s;
+      box-shadow: 0 0 18px rgba(213,180,94,.16);
     }
 
     .join:hover {
       background: transparent;
       color: #e2c16d;
+      box-shadow: 0 0 24px rgba(213,180,94,.25);
     }
 
     .footer {
@@ -144,21 +151,23 @@
     <p class="footer">VIRAJ ANALYST © 2026</p>
   </main>
 
-  <!-- Subscribe event: fires once per page load on button click -->
+  <!-- Subscribe: one event per page load, on button click -->
   <script>
-    (function () {
-      var button = document.getElementById('join-telegram');
-      var subscribeSent = false;
+  (function () {
+    var button = document.getElementById('join-telegram');
+    var subscribeSent = false;
 
-      button.addEventListener('click', function () {
-        if (subscribeSent) return;
-        subscribeSent = true;
+    if (!button) return;
 
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Subscribe');
-        }
-      });
-    })();
+    button.addEventListener('click', function () {
+      if (subscribeSent) return;
+      subscribeSent = true;
+
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Subscribe');
+      }
+    });
+  })();
   </script>
 </body>
 </html>
